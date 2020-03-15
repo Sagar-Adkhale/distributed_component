@@ -1,25 +1,35 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import faker from '../node_modules/faker';
+import UserProfile from "./component/user.profile";
+import WarnButton from "./component/warnbutton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{paddingTop:"30px"}}>
+   
+      <div>
+        <WarnButton>
+       
+        <UserProfile name="JOHN DOE" role="BLOG DEVELOPER" img={faker.image.avatar()} />
+        </WarnButton> 
+      
+    
+      
+      </div>
+      <div >
+      <WarnButton>
+        <UserProfile name="EMMA DOE" role="WEB DEVELOPER" img={faker.image.avatar()} />
+     </WarnButton>
+     </div>
+      <div>
+      <WarnButton>
+          <UserProfile name="MAK DOE" role="MOBILE DEVELOPER" img={faker.image.avatar()} />
+          </WarnButton>
+     </div>
     </div>
+   
   );
 }
 
